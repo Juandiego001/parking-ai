@@ -6,7 +6,7 @@
             </v-list-item-title>
         </v-list-item>
         <v-divider></v-divider>
-        <v-list-item link to="/cars" title="Cars"></v-list-item>
+        <v-list-item link to="/vehicles" title="Vehicles"></v-list-item>
     </v-navigation-drawer>
 
     <v-app-bar color="blue-darken-4">
