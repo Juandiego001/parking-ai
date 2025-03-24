@@ -7,6 +7,8 @@
         </v-list-item>
         <v-divider></v-divider>
         <v-list-item link to="/vehicles" title="Vehicles"></v-list-item>
+        <v-list-item link to="/towers" title="Towers"></v-list-item>
+        <v-list-item link to="/apartments" title="Apartments"></v-list-item>
     </v-navigation-drawer>
 
     <v-app-bar color="blue-darken-4">
