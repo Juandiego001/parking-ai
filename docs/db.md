@@ -27,12 +27,12 @@ erDiagram
 
     vehicles {
         serial id PK "NN"
-        integer apartment_id FK "NN"
         varchar[10] plate UK "NN"
-        varchar description "N"
+        integer apartment_id FK "NN"
+        varchar[450] description "N"
         varchar[20] status "NN"
         datetime created_at "NN"
-        datetime updated_at "NN" 
+        datetime updated_at "NN"
     }
 
     towers ||--o{ apartments : has

@@ -6,9 +6,9 @@
             </v-list-item-title>
         </v-list-item>
         <v-divider></v-divider>
-        <v-list-item link to="/vehicles" title="Vehicles"></v-list-item>
         <v-list-item link to="/towers" title="Towers"></v-list-item>
         <v-list-item link to="/apartments" title="Apartments"></v-list-item>
+        <v-list-item link to="/vehicles" title="Vehicles"></v-list-item>
     </v-navigation-drawer>
 
     <v-app-bar color="blue-darken-4">
@@ -16,8 +16,8 @@
         <v-toolbar-title>Parking AI</v-toolbar-title>
         <v-spacer></v-spacer>
         <template v-if="$vuetify.display.mdAndUp">
-            <v-btn icon="mdi-plus" variant="text" @click="createDialog=!createDialog"></v-btn>
-            <v-btn icon="mdi-magnify" variant="text" @click="searchDialog=!searchDialog"></v-btn>
+            <v-btn icon="mdi-plus" variant="icon" @click="createDialog=!createDialog"></v-btn>
+            <v-btn icon="mdi-magnify" variant="icon" @click="searchDialog=!searchDialog"></v-btn>
         </template>
 
         <v-btn icon="mdi-dots-vertical" variant="text"></v-btn>
