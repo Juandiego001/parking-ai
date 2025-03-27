@@ -1,0 +1,13 @@
+ultralytics
+flask
+flask_cors
+time
+re
+opencv-python
+matplotlib
+numpy
+PIL
+azure.cognitiveservices.vision.computervision
+azure.cognitiveservices.vision.computervision.models
+azure.cognitiveservices.vision.computervision.models
+msrest.authentication
