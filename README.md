@@ -1,2 +1,2 @@
 # parking-ai
-Parking AI.
+Parking AI using Object Detection and Optical Character Recognition
