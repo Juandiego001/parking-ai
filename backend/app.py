@@ -53,10 +53,13 @@ def get_vehicle_plate(plate):
     vehicle = cur.fetchall()
     cur.close()
 
-    if vehicle:
-        return f"El Vehículo {plate} pertenece al conjunto {vehicle[0]['apartment_id']}"
+    if vehicle and vehicle[0]['status'] == 'activo':
+        return f"ÉXITO: El Vehículo {plate} se encuentra {vehicle[0]['status'].upper()} al conjunto {vehicle[0]['apartment_id']}"
+    elif vehicle and vehicle[0]['status'] == 'inactivo':
+        return f"ALERTA: El Vehículo {plate} se encuentra {vehicle[0]['status'].upper()} al conjunto {vehicle[0]['apartment_id']}"
     else:
-        return "El vehículo NO pertenece al conjunto"
+        return "ADEVERTENCIA: El vehículo NO pertenece al conjunto"
+
 
 # * Add a new user's information
 @app.route('/vehicles', methods=['POST'])
@@ -143,6 +146,7 @@ def upload_file():
 
     response = send_file(image_io, mimetype='image/jpeg')
     response.headers["X-Vehicle-Info"] = vehicle_info
+
     return response
     
     

@@ -3,4 +3,4 @@ __pycache__
 .env
 logs
 
-/model/apikey.py
+model/apikey.py
