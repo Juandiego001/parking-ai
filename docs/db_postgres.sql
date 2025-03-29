@@ -1,6 +1,9 @@
 -- Creación de la base de datos
 CREATE DATABASE parking;
 
+-- Usar base de datos parking
+USE parking;
+
 -- Creación de tabla towers
 CREATE TABLE towers(
     id SERIAL PRIMARY KEY NOT NULL,
@@ -29,6 +32,19 @@ CREATE TABLE vehicles(
     id SERIAL PRIMARY KEY NOT NULL,
     plate VARCHAR(10) UNIQUE NOT NULL,
     apartment_id INTEGER NOT NULL,
+    description VARCHAR(450) NULL,
+    status VARCHAR(20) NOT NULL DEFAULT 'ACTIVE',
+    created_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP::TIMESTAMP,
+    updated_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP::TIMESTAMP,
+    CONSTRAINT fk_apartment FOREIGN KEY (apartment_id) REFERENCES apartments(id) ON DELETE RESTRICT ON UPDATE CASCADE
+);
+
+-- Creación de tabla entries
+CREATE TABLE entries(
+    id SERIAL PRIMARY KEY NOT NULL,
+    plate VARCHAR(10) NOT NULL,
+    apartment_id INTEGER NOT NULL,
+    type VARCHAR(20) NOT NULL,
     description VARCHAR(450) NULL,
     status VARCHAR(20) NOT NULL DEFAULT 'ACTIVE',
     created_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP::TIMESTAMP,

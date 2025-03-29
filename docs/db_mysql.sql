@@ -1,0 +1,62 @@
+-- Creación de la base de datos
+CREATE DATABASE parking;
+
+-- Usar base de datos parking
+USE parking;
+
+-- Creación de tabla towers
+CREATE TABLE towers (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    unit VARCHAR(10) NOT NULL,
+    floors INT NOT NULL,
+    status VARCHAR(20) NOT NULL DEFAULT 'ACTIVE',
+    created_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    updated_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
+);
+
+
+-- Creación de tabla apartaments
+CREATE TABLE apartments (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    tower_id INT NOT NULL,
+    floor INT NOT NULL,
+    unit INT NOT NULL,
+    status VARCHAR(20) NOT NULL DEFAULT 'ACTIVE',
+    created_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    updated_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+    CONSTRAINT fk_tower FOREIGN KEY (tower_id)
+        REFERENCES towers(id)
+        ON DELETE RESTRICT
+        ON UPDATE CASCADE
+);
+
+-- Creación de tabla vehicles
+CREATE TABLE vehicles (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    plate VARCHAR(10) NOT NULL UNIQUE,
+    apartment_id INT NOT NULL,
+    description VARCHAR(450),
+    status VARCHAR(20) NOT NULL DEFAULT 'ACTIVE',
+    created_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    updated_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+    CONSTRAINT fk_apartment FOREIGN KEY (apartment_id)
+        REFERENCES apartments(id)
+        ON DELETE RESTRICT
+        ON UPDATE CASCADE
+);
+
+-- Creación de tabla entries
+CREATE TABLE entries (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    plate VARCHAR(10) NOT NULL UNIQUE,
+    apartment_id INT NOT NULL,
+    type VARCHAR(20) NOT NULL,
+    description VARCHAR(450),
+    status VARCHAR(20) NOT NULL DEFAULT 'ACTIVE',
+    created_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    updated_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+    CONSTRAINT fk_apartment FOREIGN KEY (apartment_id)
+        REFERENCES apartments(id)
+        ON DELETE RESTRICT
+        ON UPDATE CASCADE
+);

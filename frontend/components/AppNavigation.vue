@@ -6,9 +6,10 @@
             </v-list-item-title>
         </v-list-item>
         <v-divider></v-divider>
-        <v-list-item link to="/towers" title="Towers"></v-list-item>
-        <v-list-item link to="/apartments" title="Apartments"></v-list-item>
-        <v-list-item link to="/vehicles" title="Vehicles"></v-list-item>
+        <v-list-item link to="/towers" title="Towers" prepend-icon="mdi-office-building"></v-list-item>
+        <v-list-item link to="/apartments" title="Apartments" prepend-icon="mdi-home"></v-list-item>
+        <v-list-item link to="/vehicles" title="Vehicles" prepend-icon="mdi-car-estate"></v-list-item>
+        <v-list-item link to="/entries" title="Entries" prepend-icon="mdi-parking"></v-list-item>
     </v-navigation-drawer>
 
     <v-app-bar color="blue-darken-4">

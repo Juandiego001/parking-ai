@@ -23,6 +23,12 @@ def get_vehicle(vehicle_id: int):
     return db.session.query(Vehicle).filter(Vehicle.id == vehicle_id).first()
 
 
+def get_vehicle_by_plate(plate: str):
+    '''Get vehicle by vehicle id'''
+
+    return db.session.query(Vehicle).filter(Vehicle.plate == plate).first()
+
+
 def check_vehicle_exists(vehicle_id: int):
     '''Check if vehicle exists'''
 

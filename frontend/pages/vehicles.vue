@@ -36,7 +36,7 @@
                         <v-col cols="12" class="text-end">
                             <v-btn color="blue-darken-4" variant="outlined" @click="updateDialog = false">Cancel</v-btn>
                             <span class="mx-1"></span>
-                            <v-btn type="submit" class="bg-blue-darken-4">Create</v-btn>
+                            <v-btn type="submit" class="bg-blue-darken-4">Update</v-btn>
                         </v-col>
                     </v-row>
                 </v-form>
