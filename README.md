@@ -1,4 +1,4 @@
-# 🚗 Parking-AI: Smart Parking with License Plate Recognition
+# 🚗SecureGate: Smart Parking with License Plate Recognition
 
 ## 📌 Project Overview
 This project implements a vehicle license plate recognition system for a smart parking lot. It uses YOLO for plate detection and Azure OCR to extract characters from them. The information is then validated and stored in a PostgreSQL database through an API built with Flask. The frontend is developed using Vue.js for an interactive user interface.
